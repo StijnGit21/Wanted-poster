@@ -1,0 +1,5 @@
+make_podsters.py
+will put all the pictures from a folder in to the wanted poster.
+
+make_PDF.py
+will make a PDF with all the poster for ease of printing
