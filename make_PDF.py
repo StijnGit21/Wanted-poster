@@ -15,7 +15,13 @@ def create_pdf_with_images(folder_path, output_pdf_path):
     for image_file in image_files:
         image_path = os.path.join(folder_path, image_file)
         pdf.add_page()
-        pdf.image(image_path, x=10, y=10, w=190)  # Adjust the x, y, and w parameters as needed
+
+        # Adjust the x, y, and w parameters as needed
+        x_position = 0  # Horizontal position in mm
+        y_position = 0  # Vertical position in mm
+        width = 210     # Width of the image in mm
+
+        pdf.image(image_path, x=x_position, y=y_position, w=width)
 
     # Save the PDF to the specified path
     pdf.output(output_pdf_path, "F")
