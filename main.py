@@ -2,11 +2,11 @@ from PIL import Image
 import os
 
 # Constants for positions, sizes, and paths
-PHOTO_POSITION = (50, 50)
-PHOTO_SIZE = (200, 200)
-TEMPLATE_PATH = '"C:\Users\stijn\Pictures\wanted poster\poster.jpg"'
-PHOTO_FOLDER = '"C:\Users\stijn\Pictures\wanted poster\input"'
-OUTPUT_FOLDER = '"C:\Users\stijn\Pictures\wanted poster\output"'
+PHOTO_POSITION = (80, 182)
+PHOTO_SIZE = (230, 230)
+TEMPLATE_PATH = "C:\\Users\\stijn\\Pictures\\wanted poster\\poster.jpg"
+PHOTO_FOLDER = "C:\\Users\\stijn\\Pictures\\wanted poster\\input"
+OUTPUT_FOLDER = "C:\\Users\\stijn\\Pictures\\wanted poster\\output"
 
 def create_wanted_poster(template_path, photo_path, output_path):
     template = Image.open(template_path)
