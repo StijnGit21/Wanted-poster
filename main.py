@@ -4,9 +4,9 @@ import os
 # Constants for positions, sizes, and paths
 PHOTO_POSITION = (50, 50)
 PHOTO_SIZE = (200, 200)
-TEMPLATE_PATH = 'path/to/your/template.png'
-PHOTO_FOLDER = 'path/to/your/photos'
-OUTPUT_FOLDER = 'path/to/your/output'
+TEMPLATE_PATH = '"C:\Users\stijn\Pictures\wanted poster\poster.jpg"'
+PHOTO_FOLDER = '"C:\Users\stijn\Pictures\wanted poster\input"'
+OUTPUT_FOLDER = '"C:\Users\stijn\Pictures\wanted poster\output"'
 
 def create_wanted_poster(template_path, photo_path, output_path):
     template = Image.open(template_path)
