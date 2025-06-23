@@ -1,63 +1,37 @@
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 import os
-import random
 
-# define paths for the template, photo folder, and output folder
-template_path = 'path/to/your/template.png'
-photo_folder = 'path/to/your/photos'
-output_folder = 'path/to/your/output'
+# Constants for positions, sizes, and paths
+PHOTO_POSITION = (50, 50)
+PHOTO_SIZE = (200, 200)
+TEMPLATE_PATH = 'path/to/your/template.png'
+PHOTO_FOLDER = 'path/to/your/photos'
+OUTPUT_FOLDER = 'path/to/your/output'
 
-
-# Position where the photo will be placed on the template
-position_picture = (50, 50)  # Adjust position as needed
-
-# Position where the text will be placed on the template
-text_position = (50, 250)  # Adjust position as needed
-
-
-picture_size = (400, 600)  # Size of the wanted poster template
-
-
-def create_wanted_poster(template_path, photo_path, output_path, position_picture, text_position):
+def create_wanted_poster(template_path, photo_path, output_path):
     template = Image.open(template_path)
     photo = Image.open(photo_path)
 
     # Resize the photo to fit the template
-    photo = photo.resize((picture_size))  # Adjust size as needed
+    photo = photo.resize(PHOTO_SIZE)
 
     # Paste the photo onto the template at the specified position
-    template.paste(photo, position_picture)
-
-    # Extract the name from the photo filename (without extension)
-    photo_name = os.path.splitext(os.path.basename(photo_path))[0]
-
-    # Generate a random award amount
-    award = random.randint(1000, 10000)
-
-    # Use a basic font
-    font = ImageFont.load_default()
-
-    # Draw the name and award on the template
-    draw = ImageDraw.Draw(template)
-    draw.text(text_position, f"Name: {photo_name}", font=font, fill="black")
-    draw.text((text_position[0], text_position[1] + 20), f"Award: ${award}", font=font, fill="black")
+    template.paste(photo, PHOTO_POSITION)
 
     # Save the result
     template.save(output_path)
 
 def main():
-
-
     # Ensure the output directory exists
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+    if not os.path.exists(OUTPUT_FOLDER):
+        os.makedirs(OUTPUT_FOLDER)
 
     # Loop through all photos in the photo folder
-    for photo in os.listdir(photo_folder):
+    for photo in os.listdir(PHOTO_FOLDER):
         if photo.lower().endswith(('.png', '.jpg', '.jpeg')):
-            photo_path = os.path.join(photo_folder, photo)
-            output_path = os.path.join(output_folder, f'wanted_{photo}')
-            create_wanted_poster(template_path, photo_path, output_path, position_picture, text_position)
+            photo_path = os.path.join(PHOTO_FOLDER, photo)
+            output_path = os.path.join(OUTPUT_FOLDER, f'wanted_{photo}')
+            create_wanted_poster(TEMPLATE_PATH, photo_path, output_path)
 
 if __name__ == "__main__":
     main()
