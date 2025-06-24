@@ -2,8 +2,8 @@ from PIL import Image
 import os
 
 # Constants for positions, sizes, and paths
-PHOTO_POSITION = (80, 182)
-PHOTO_SIZE = (230, 230)
+PHOTO_POSITION = (90, 230)
+PHOTO_SIZE = (280, 280)
 TEMPLATE_PATH = "C:\\Users\\stijn\\Pictures\\wanted poster\\poster.jpg"
 PHOTO_FOLDER = "C:\\Users\\stijn\\Pictures\\wanted poster\\input"
 OUTPUT_FOLDER = "C:\\Users\\stijn\\Pictures\\wanted poster\\output"
