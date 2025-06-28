@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageOps
 import os
 
 # Constants for positions, sizes, and paths
@@ -11,6 +11,9 @@ OUTPUT_FOLDER = "C:\\Users\\stijn\\Pictures\\wanted poster\\output"
 def create_wanted_poster(template_path, photo_path, output_path):
     template = Image.open(template_path)
     photo = Image.open(photo_path)
+
+    # Correct the orientation of the photo based on EXIF data
+    photo = ImageOps.exif_transpose(photo)
 
     # Resize the photo to fit the template
     photo = photo.resize(PHOTO_SIZE)

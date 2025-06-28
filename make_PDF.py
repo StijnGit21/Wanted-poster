@@ -18,7 +18,7 @@ def create_pdf_with_images(folder_path, output_pdf_path):
 
         # Adjust the x, y, and w parameters as needed
         x_position = 0  # Horizontal position in mm
-        y_position = 0  # Vertical position in mm
+        y_position = -15  # Vertical position in mm
         width = 210     # Width of the image in mm
 
         pdf.image(image_path, x=x_position, y=y_position, w=width)
